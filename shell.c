@@ -17,6 +17,8 @@ int main(int ac, char *argv[])
 	ssize_t read;
 	(void)ac;
 
+
+
 	while (1)
 	{
 		printf("#CISFUN$ ");
@@ -29,7 +31,7 @@ int main(int ac, char *argv[])
 		else if (read > 1)
 		{
 			if (line[read - 1] == '\n')
-				line[read = 1] = '\0';
+				line[read - 1] = '\0';
 
 			char *command = line;
 			char *arguments[] = {command, NULL};
