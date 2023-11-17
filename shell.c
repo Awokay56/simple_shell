@@ -33,13 +33,13 @@ int main(int ac, char *argv[])
 
 			if (line[read - 1] == '\n')
 				line[read - 1] = '\0';
+			arguments = malloc(2 * sizeof(char *));
 
-		       arguments = malloc(2 * sizeof(char *));
-
-		       if (arguments == NULL)
-			       perror("malloc");
-
-
+			if (arguments == NULL)
+			{
+				perror("malloc");
+				exit(EXIT_FAILURE);
+			}
 		       arguments[0] = command;
 		       arguments[1] = NULL;
 
